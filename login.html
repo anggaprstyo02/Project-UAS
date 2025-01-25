@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/admin-lte@3.1/dist/css/adminlte.min.css" rel="stylesheet">
+  <link rel="icon" href="img/icon.png">
+</head>
+<body class="bg-slate-100">
+  <div class="flex items-center justify-center min-h-screen">
+    <div class="w-full max-w-xs">
+      <div class="card bg-white shadow-md rounded-lg p-6">
+        <div class="card-body">
+          <h4 class="text-center font-bold text-2xl mb-4">Login</h4>
+          <form id="loginForm">
+            <div class="mb-4">
+              <label for="username" class="block text-gray-700 font-medium">Username</label>
+              <input type="text" id="username" name="username" class="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" required>
+            </div>
+            <div class="mb-4">
+              <label for="password" class="block text-gray-700 font-medium">Password</label>
+              <input type="password" id="password" name="password" class="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" required>
+            </div>
+            <div class="flex justify-end">
+              <button type="submit" class="btn btn-primary">Login</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById('loginForm').onsubmit = function(event) {
+      event.preventDefault(); // Prevent form from submitting to a server
+
+      // Dummy credentials for demonstration
+      const username = document.getElementById('username').value;
+      const password = document.getElementById('password').value;
+
+      if (username === 'admin' && password === 'admin123') {
+        // Redirect to AdminLTE dashboard
+        window.location.href = './pages/admin/admin.html'; // Update this path based on your project structure
+        alert('Welcome to Admin!')
+      } else {
+        // Display error message
+        alert('Invalid username or password');
+      }
+    };
+  </script>
+</body>
+</html>
